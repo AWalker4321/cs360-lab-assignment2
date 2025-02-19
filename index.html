@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid" id="all-content">
+      <div class="row">
+          <nav class="navbar d-flex flex-column col order-1 order-lg-2 align-items-start" id="navbar">
+            <ul class="flex-column">
+              <li class="navbar-brand">Photos Website Title</li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" target="_blank" href="bio.html">BIO</a>
+                <a class="nav-link" target="_blank" href="blog.html">Blog</a>
+                <a class="nav-link" target="_blank" href="contact.html">Contact</a>
+                <a class="nav-link" target="_blank" href="https://www.facebook.com">
+                  <img src="thumbnails/Facebook_logo.png" width="20" height="20">
+                </a>
+                <a class="nav-link" target="_blank" href="https://www.instagram.com">
+                  <img src="thumbnails/instagram_logo.png" width="20" height="20">
+                </a>
+                <a class="nav-link" target="_blank" href="https://www.x.com">
+                  <img src="thumbnails/X_logo.jpg" width="20" height="20">
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="col-lg-10 order-lg-1 order-2 col-12" id="content">
+            <div class="row gallery-row">
+              <div class="col">
+                <img src="images/admin-vines.jpg" class="img-fluid gallery-img" onclick="showImage(this)"/>
+              </div>
+              <div class="col">
+                <img src="images/admin-winter.jpg" class="img-fluid gallery-img" onclick="showImage(this)"/>
+              </div>
+            </div>
+            <div class="row gallery-row">
+              <div class="col">
+                <img src="images/dorms.jpg" class="img-fluid gallery-img" onclick="showImage(this)"/>
+              </div>
+              <div class="col">
+                <img src="images/iric.jpg" class="img-fluid gallery-img" onclick="showImage(this)"/>
+              </div>
+              <div class="col">
+                <img src="images/target-entrance.jpg" class="img-fluid gallery-img" onclick="showImage(this)"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Template-->
+    <div class="modal fade" id="modalTemplate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex justify-content-center">
+            <img id="modalImg" class="img-fluid"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      function showImage(element) {
+        console.log("Hi");
+        var imgSrc = element.src;
+        var imageModal = new bootstrap.Modal(document.getElementById("modalTemplate"));
+        document.getElementById("modalImg").src = imgSrc;
+        imageModal.show();
+      }
+    </script>
+
+  </body>
+</html>

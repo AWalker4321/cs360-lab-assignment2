@@ -1,0 +1,13 @@
+div.gallery-row {
+    padding-bottom: 20px;
+}
+
+img.gallery-img {
+    max-width: 400px;
+    max-height: 400px;
+    margin:20px;
+}
+
+#content {
+    background-color: rgb(49, 50, 68);
+}
